@@ -1,19 +1,10 @@
 @extends('template.master')
-@section('content')
-<head>
-	<title>TITLE</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="UTF-8">
-
-
-	<!-- Font -->
-
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+@push('style')
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 	<!-- Stylesheets -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="common-css/bootstrap.css" rel="stylesheet">
 
 	<link href="common-css/ionicons.css" rel="stylesheet">
@@ -22,6 +13,30 @@
 	<link href="single-post-1/css/styles.css" rel="stylesheet">
 
 	<link href="single-post-1/css/responsive.css" rel="stylesheet">
+@endpush
+@section('content')
+<head>
+	{{-- <title>TITLE</title> --}}
+	{{-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8"> --}}
+
+
+	<!-- Font -->
+
+	{{-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+	<!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="common-css/bootstrap.css" rel="stylesheet">
+
+	<link href="common-css/ionicons.css" rel="stylesheet">
+
+
+	<link href="single-post-1/css/styles.css" rel="stylesheet">
+
+	<link href="single-post-1/css/responsive.css" rel="stylesheet"> --}}
 
 </head>
 <body >
@@ -75,20 +90,21 @@
     
                         <div class="post-icons-area">
                             <ul class="post-icons">
-                                <li><a href="#"><i class="ion-heart"></i>57</a></li>
-                                <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
-                                <li><a href="#"><i class="ion-eye"></i>138</a></li>
+                                <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
+                                <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
+                                {{-- <li><a href="#"><i class="ion-chatbubble"></i>6</a></li> --}}
+                                {{-- <li><a href="#"><i class="ion-eye"></i>138</a></li> --}}
                             </ul>
     
-                            <ul class="icons">
+                            {{-- <ul class="icons">
                                 <li>SHARE : </li>
                                 <li><a href="#"><i class="ion-social-facebook"></i></a></li>
                                 <li><a href="#"><i class="ion-social-twitter"></i></a></li>
                                 <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                            </ul>
+                            </ul> --}}
                         </div>
     
-                        <div class="post-footer post-info">
+                        {{-- <div class="post-footer post-info">
     
                             <div class="left-area">
                                 <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
@@ -99,7 +115,7 @@
                                 <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
                             </div>
     
-                        </div><!-- post-info -->
+                        </div><!-- post-info --> --}}
     
     
                     </div><!-- main-post -->
@@ -152,7 +168,7 @@
     
         </div><!-- container -->
     </section><!-- post-area -->
-    <section class="recomended-area section">
+    {{-- <section class="recomended-area section">
         <div class="container">
             <div class="row">
     
@@ -231,7 +247,7 @@
             </div><!-- row -->
     
         </div><!-- container -->
-    </section>
+    </section> --}}
     
     <section class="comment-section">
         <div class="container">
@@ -281,19 +297,22 @@
                                     <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
                                 </div>
     
-                                <div class="right-area">
-                                    <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-                                </div>
     
                             </div><!-- post-info -->
     
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
                                 Ut enim ad minim veniam</p>
+
+                        </div>
+                        <div class="post-icons-area">
+                            <ul class="post-icons">
+                                <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
+                                <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
+                            </ul>
     
                         </div>
-    
-                        <div class="comment">
+                        {{-- <div class="comment">
                             <h5 class="reply-for">Reply for <a href="#"><b>Katy Lui</b></a></h5>
     
                             <div class="post-info">
@@ -317,7 +336,7 @@
                                 ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
                                 Ut enim ad minim veniam</p>
     
-                        </div>
+                        </div> --}}
     
                     </div><!-- commnets-area -->
     
