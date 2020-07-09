@@ -10,10 +10,9 @@ class PertanyaanController extends Controller
 {
     public function index(){
         $pertanyaan = PertanyaanModel::get_all();
-        return view ('pertanyaan.index', compact('pertanyaan'));
+        return view ('pertanyaan.home', compact('pertanyaan'));
 
     }
-
     public function create (){
         return view ('pertanyaan.form');
     }
@@ -23,23 +22,5 @@ class PertanyaanController extends Controller
        return redirect('/pertanyaan');
   }
 
-//   public function show ($id){
-//     $artikel = ArtikelModel::find_by_id($id);
-//     return view ('artikel.show', compact('artikel'));
-//   }
-    
-//     public function edit ($id) {
-//         $artikel =ArtikelModel::find_by_id($id);
-//         return view('artikel.edit', compact('artikel'));
-//     }
 
-//     public function update($id, Request $request){
-//         $artikel = ArtikelModel::update($id, $request->all());
-//         return redirect('/artikel');
-//     }
-
-//     public function destroy($id){
-//         $deleted = ArtikelModel::destroy($id);
-//         return redirect('/artikel');
-//     }
 }

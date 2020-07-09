@@ -94,7 +94,7 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a> 
                     
-                </div> <br> <textarea id="konten" class="form-control" name="konten" rows="10" cols="50"></textarea>
+                </div> <br> 
             </div>
         </div>
     </body>

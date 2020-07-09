@@ -6,7 +6,7 @@
 
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <div class= "ml-3 mt-3">
-<form action="/"  method = "POST">
+<form action="/pertanyaan"  method = "POST">
 @csrf
 
 <div class="form-group">
@@ -29,7 +29,7 @@
 </div>
  
 <button type="submit" class="btn btn-primary">Submit</button>
-<a href = "/" class="btn btn-primary">Kembali</a>
+<a href = "/pertanyaan" class="btn btn-primary">Kembali</a>
 </form>
 
 </div>
