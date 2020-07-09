@@ -16,9 +16,11 @@ Route::get('/', function () {
     return view('page.home');
 });
 
-
 Route::get('/post', function () {
     return view('page.post');
+});
+Route::get('/login', function () { // menampilkan package editor
+    return view('page.login');
 });
 Route::get('/profile', function () {
     return view('page.profile');
@@ -41,3 +43,10 @@ Route::post('/pertanyaan', 'PertanyaanController@store');
 // Route::put('/artikel/{id}', 'ArtikelController@update');
 // Route::delete('/artikel/{id}', 'ArtikelController@destroy');
 
+Route::get('/coba', function () { // menampilkan package editor
+    return view('text-editor');
+});
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

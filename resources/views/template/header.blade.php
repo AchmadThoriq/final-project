@@ -10,7 +10,7 @@
             <li><a href="#">Categories</a></li>
             <li><a href="#">Features</a></li>
             <li><a href="#">Sign In</a></li>
-            <li><a href="#">Log In</a></li>
+            <li><a href="/login">Log In</a></li>
         </ul><!-- main-menu -->
 
         <div class="src-area">

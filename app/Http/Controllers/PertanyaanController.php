@@ -9,7 +9,7 @@ use App\Models\PertanyaanModel;
 class PertanyaanController extends Controller
 {
     public function index(){
-        $pertanyaan = ArtikelModel::get_all();
+        $pertanyaan = PertanyaanModel::get_all();
         return view ('pertanyaan.index', compact('pertanyaan'));
 
     }
