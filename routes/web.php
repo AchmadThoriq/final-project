@@ -12,10 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.home');
 });
-
 
 Route::get('/coba', function () {
     return "OK";
+});
+Route::get('/post', function () {
+    return view('page.post');
+});
+Route::get('/profile', function () {
+    return view('page.profile');
 });
