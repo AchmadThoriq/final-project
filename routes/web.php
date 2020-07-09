@@ -17,5 +17,5 @@ Route::get('/', function () {
 
 
 Route::get('/coba', function () {
-    return "OK";
+    return view('text-editor');
 });

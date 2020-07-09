@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel <br>
                 </div>
 
                 <div class="links">
@@ -92,8 +92,9 @@
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                    <a href="https://github.com/laravel/laravel">GitHub</a> 
+                    
+                </div> <br> <textarea id="konten" class="form-control" name="konten" rows="10" cols="50"></textarea>
             </div>
         </div>
     </body>
