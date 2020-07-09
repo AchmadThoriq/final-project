@@ -13,9 +13,17 @@
 Auth::routes();
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.home');
 });
 
+
+Route::get('/post', function () {
+    return view('page.post');
+});
+Route::get('/profile', function () {
+    return view('page.profile');
+});
+=======
 Route::get('/coba', function () { // menampilkan package editor
     return view('text-editor');
 });
