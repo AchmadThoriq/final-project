@@ -1,5 +1,9 @@
 <!-- uji coba package editor -->
 
+@extends('template.master')
+
+@section('content')
+
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <div class= "ml-3 mt-3">
 <form action="/"  method = "POST">
@@ -7,28 +11,25 @@
 
 <div class="form-group">
   <label for="judul">Judul :</label>
-  <input type="text" class="form-control" id="judul" placeholder="Masukan Judul" name="judul" >
+  <!-- <input type="text" class="form-control" id="judul" placeholder="Masukan Judul" name="judul" > -->
   <textarea name="judul" class="form-control my-editor">{!! old('judul', $judul ?? '') !!}</textarea>
 </div>
 
 <div class="form-group">
   <label for="isi">Isi :</label>
-  <input type="text" class="form-control" id="isi" placeholder="Masukan Isi" name="isi" >
+  <!-- <input type="text" class="form-control" id="isi" placeholder="Masukan Isi" name="isi" > -->
   <textarea name="isi" class="form-control my-editor">{!! old('isi', $isi ?? '') !!}</textarea>
 </div>
 
-<div class="form-group">
-  <label for="slug">Slug:</label>
-  <input type="text" class="form-control" placeholder="Masukan Isi" id="slug"  name="slug">
-</div>
 
 <div class="form-group">
   <label for="tag">Tag :</label>
-  <input type="text" class="form-control"  placeholder="Masukan Isi" id="tag"   name="tag" >
+  <!-- <input type="text" class="form-control"  placeholder="Masukan Isi" id="tag"   name="tag" > -->
+  <textarea name="tag" class="form-control my-editor">{!! old('tag', $tag ?? '') !!}</textarea>
 </div>
  
 <button type="submit" class="btn btn-primary">Submit</button>
-<a href = "/artikel" class="btn btn-primary">Kembali</a>
+<a href = "/" class="btn btn-primary">Kembali</a>
 </form>
 
 </div>
@@ -70,4 +71,6 @@
   tinymce.init(editor_config);
 </script>
 
+
+@endsection
 
