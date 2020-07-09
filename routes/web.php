@@ -23,7 +23,7 @@ Route::get('/post', function () {
 Route::get('/profile', function () {
     return view('page.profile');
 });
-=======
+// =======
 Route::get('/coba', function () { // menampilkan package editor
     return view('text-editor');
 });
