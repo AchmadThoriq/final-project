@@ -16,9 +16,11 @@ Route::get('/', function () {
     return view('page.home');
 });
 
-
 Route::get('/post', function () {
     return view('page.post');
+});
+Route::get('/login', function () { // menampilkan package editor
+    return view('page.login');
 });
 Route::get('/profile', function () {
     return view('page.profile');
