@@ -32,6 +32,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pertanyaan/create', 'PertanyaanController@create');
     Route::post('/pertanyaan', 'PertanyaanController@store');
     Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
+    Route::get('/jawaban', 'JawabanController@index');
+    Route::get('/jawaban/create', 'JawabanController@create');
+    Route::post('/jawaban', 'JawabanController@store');
 });
 
 Auth::routes();
