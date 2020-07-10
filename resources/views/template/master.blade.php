@@ -21,24 +21,17 @@
 	<link href="{{asset('layout-1/css/styles.css')}}" rel="stylesheet">
 
 	<link href="{{asset('layout-1/css/responsive.css')}}" rel="stylesheet">
+	
 	@stack('style')
+	@stack('scripts-head')
 </head>
 <body >
 
-	<header>
-		@include('template.header')
-	</header>
+	@include('template.header')
 
-	<div class="slider"></div><!-- slider -->
-	
 	@yield('content')
 
-
-	<footer>
-
-		@include('template.footer')
-	</footer>
-
+	@include('template.footer')
 
 	<!-- SCIPTS -->
 
