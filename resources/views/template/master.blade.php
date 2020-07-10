@@ -28,7 +28,7 @@
 <body >
 
 	@include('template.header')
-
+	<div class="slider"></div>
 	@yield('content')
 
 	@include('template.footer')
@@ -42,7 +42,6 @@
 	<script src="{{asset('common-js/bootstrap.js')}}"></script>
 
 	<script src="{{asset('common-js/scripts.js')}}"></script>
-
 	@stack('scripts')
 
 </body>

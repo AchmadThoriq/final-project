@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.home');
 });
 
 Route::get('/post', function () {
@@ -26,13 +26,12 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
-Route::group(['middleware' => 'auth'], function (){
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/pertanyaan', 'PertanyaanController@index');
     Route::get('/pertanyaan/create', 'PertanyaanController@create');
     Route::post('/pertanyaan', 'PertanyaanController@store');
     Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
-    
 });
 
 Auth::routes();
