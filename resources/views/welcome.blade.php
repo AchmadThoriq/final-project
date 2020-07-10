@@ -97,5 +97,6 @@
                 </div> <br> 
             </div>
         </div>
+        @include('views.template.footer')
     </body>
 </html>
