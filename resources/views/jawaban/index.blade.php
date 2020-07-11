@@ -4,12 +4,9 @@
 <section class="blog-area section">
     <div class="container">
       <div class="text-right">
-        <a href = "/pertanyaan/create" class = "btn load-more-btn mb-4"> 
-          <b>Buat Pertanyaan Baru </b>
-        </a>
       </div> 
         <div class="row">
-        @foreach($pertanyaan as $key => $pertanyaan)
+        @foreach($jawaban as $key => $jawaban)
 
             <div class="col-lg-4 col-md-6">
               <div class="card h-100">
@@ -19,9 +16,8 @@
                   <div class="blog-info">
 
                     <h4 class="title">
-                      <a href="/pertanyaan/{{$pertanyaan->id}}">
-                      
-                        <b> {!! $pertanyaan->judul !!}</b>
+                      <a href="/jawaban/{{$jawaban->id}}">
+                        <b>{!! $jawaban->isi !!}</b>
                       </a>
                     </h4>
 
@@ -38,9 +34,7 @@
                       <li><a href="#"><i class="ion-chatbubble"></i>6</a></li>
                       <li><a href="#"><i class="ion-eye"></i>138</a></li>
                     </ul>
-                    <a href = "/jawaban/create" class = "btn load-more-btn mb-4"> 
-                          <b>Jawab</b>
-                      </a>
+
                   </div><!-- blog-right -->
 
                 </div><!-- single-post extra-blog -->
@@ -53,7 +47,7 @@
 
         </div><!-- row -->
 
-        <a class="btn load-more-btn" href="#"><b>Lihat Lebih Banyak</b></a>
+        <a class="btn load-more-btn" href="/pertanyaan"><b>Kembali</b></a>
 
     </div><!-- container -->
 </section><!-- section -->
