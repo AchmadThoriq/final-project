@@ -20,18 +20,20 @@
                         <b> {{ $pertanyaan->judul }}</b>
                       {{-- </a> --}}
                     </h4>
-                      @foreach ($user as $data => $value)
-                      @php
+                    @php
                           $date = explode(' ',$pertanyaan->created_at);
                           $dated = explode('-', $date[0]);
-                      @endphp
+                          @endphp
                       <div class="avatar-area">
                         <div class="right-area">
-                        <a class="name" href="#"><b>by: {{$value->name}}</b></a>
+                          @foreach ($user as $data => $value)
+                            @if ($value->id == $pertanyaan->users_id)
+                            <a class="name" href="#"><b>by: {{$value->name}}</b></a>
+                            @endif
+                            @endforeach
                           <h6 class="date" href="#">{{$dated[2]}}/{{$dated[1]}}/{{$dated[0]}} </h6>
                         </div>
                       </div>
-                      @endforeach
 
                     <ul class="post-footer">
                       <li><a href="#"><i class="ion-heart"></i>57</a></li>

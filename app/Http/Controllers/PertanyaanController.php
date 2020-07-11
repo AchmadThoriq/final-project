@@ -48,7 +48,7 @@ class PertanyaanController extends Controller
         $tag_all = Tag::all();
         // $jawaban = Answer::wherequestion_id($pertanyaan->question_id);
         $jawaban = Answer::where('question_id', $pertanyaan->id)->get();
-        // dd($jawaban);
-        return view('page.post', compact('pertanyaan', 'user', 'tag', 'tag_all', 'jawaban'));
+        $user_all = User::all();
+        return view('page.post', compact('pertanyaan', 'user', 'tag', 'tag_all', 'jawaban', 'user_all'));
     }
 }

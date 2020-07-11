@@ -19,7 +19,19 @@
             <li><a href="#">Home</a></li>
             <li><a href="/pertanyaan/create">Create Question</a></li>
             <li><a href="/profile" style="background-color: aqua">My Profile</a></li>
-            <li><a href="#" style="background-color: rgb(219, 0, 0)">Logout</a></li>
+            <li>
+                <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> -->
+                    <a class="dropdown-item" style="background-color: red" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                <!-- </div> -->
+            </li>
         </ul><!-- main-menu -->
         <div class="src-area">
             <form>

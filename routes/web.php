@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('page.home');
-});
+Route::get('/', 'PertanyaanController@index');
 
 Route::get('/post/{id}', 'PertanyaanController@show');
 
@@ -27,12 +25,12 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
+Route::get('/pertanyaan', 'PertanyaanController@index');
+Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/pertanyaan', 'PertanyaanController@index');
     Route::get('/pertanyaan/create', 'PertanyaanController@create');
     Route::post('/pertanyaan', 'PertanyaanController@store');
-    Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
     Route::get('/jawaban', 'JawabanController@index');
     Route::get('/jawaban/create', 'JawabanController@create');
     Route::post('/jawaban', 'JawabanController@store');

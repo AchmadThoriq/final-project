@@ -226,29 +226,38 @@
                         @foreach ($jawaban as $data)
                         
                         <div class="commnets-area ">
-                            
+
                             <div class="comment">
                                 
-                                
-                                <div class="post-info">
-                                    <a class="name" href="#"><b>Katy Liu</b></a>
-                                    <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
+                                @foreach ($user_all as $usr)
                                     
-                                </div><!-- post-info -->
-                                
-                                
-                                <p>{{$data->isi}}</p>
-                                
-                            </div>
-                            
-                            <div class="post-icons-area">
-                                <ul class="post-icons">
-                                    <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
-                                    <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
-                                </ul>
-                            </div>
-                            
-                        </div><!-- commnets-area -->
+                                <div class="post-info">
+                                    @if ($usr->id == $data->users_id)
+                                        
+                                <a class="name" href="#"><b>{{$usr->name}}</b></a>
+                                @php
+                                $date = explode(' ',$data->created_at);
+                                $dated = explode('-', $date[0]);
+                                   @endphp
+                                <h6 class="date">{{$dated[2]}}/{{$dated[1]}}/{{$dated[0]}}</h6>
+                                        
+                                        </div><!-- post-info -->
+                                        
+                                        
+                                        <p>{{$data->isi}}</p>
+                                        
+                                        </div>
+                                        
+                                        <div class="post-icons-area">
+                                            <ul class="post-icons">
+                                                <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
+                                                <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
+                                                </ul>
+                                                </div>
+                                                
+                                                </div><!-- commnets-area -->
+                                                @endif
+                                                @endforeach
                         @endforeach
                         @endif    
                                         
