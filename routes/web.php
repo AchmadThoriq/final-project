@@ -14,9 +14,7 @@ Route::get('/', function () {
     return view('page.home');
 });
 
-Route::get('/post', function () {
-    return view('page.post');
-});
+Route::get('/post/{id}', 'PertanyaanController@show');
 
 Route::get('/profile', function () {
     return view('page.profile');

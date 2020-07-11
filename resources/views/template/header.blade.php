@@ -7,7 +7,7 @@
 
         <ul class="main-menu visible-on-click" id="main-menu">
             <li><a href="#">Home</a></li>
-            <li><a href="/login-page">Log In</a></li>
+            <li><a href="/login">Log In</a></li>
             <li><a href="#">Sign Up</a></li>
         </ul><!-- main-menu -->
         

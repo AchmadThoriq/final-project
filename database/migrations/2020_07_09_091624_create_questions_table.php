@@ -17,7 +17,6 @@ class CreateQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('judul');
             $table->string('isi');
-            $table->string('tag')->nullable($value = true);
             $table->timestamps();
         });
     }

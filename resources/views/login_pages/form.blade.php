@@ -23,20 +23,25 @@
               @csrf
               <div class="row">                  
                 <div class="col-sm-12">
+                  <label >Judul</label>
                   <input type="text" aria-required="true" name="judul" class="form-control"
-                    placeholder="Judul" aria-invalid="true" required >
+                    aria-invalid="true" maxlength = "60" required >
                 </div>
 
                 <div class="col-sm-12">
-                  <textarea name="isi" rows="2" class="form-control my-editor"
-                    placeholder="Enter your comment" aria-required="true" aria-invalid="false">
-                      {!! old('isi', $isi ?? '') !!}
-                    </textarea >
+                  <label>Deskripsi</label>
+                  <textarea name="isi" class="form-control my-editor"
+                         maxlength = "255">
+                  </textarea>
                 </div><!-- col-sm-12 -->
-
                 <div class="col-sm-12">
-                  <input type="text" aria-required="true" name="tag" class="form-control"
-                    placeholder="Tags" aria-invalid="true" required>
+                  <label>Tags : </label>
+                  <select name="tag_id" id="tag_id" required>
+                    @foreach ($tag as $item => $value)
+                  <option value="{{$item + 1}}">{{$value->tag_name}}</option>
+                  {{-- <option value="">test</option> --}}
+                    @endforeach
+                  </select>
                 </div>
                 <div class="col-sm-12 text-right">
                   <button class="submit-btn" type="submit" id="form-submit">
@@ -55,7 +60,7 @@
     </div><!-- container -->
   </section>
 @endsection
-
+{{-- 
 @push('scripts')
   <script>
     var editor_config = {
@@ -93,4 +98,4 @@
 
     tinymce.init(editor_config);
   </script>
-@endpush
+@endpush --}}

@@ -1,18 +1,18 @@
-@extends('template.master')
+@extends('template.master_login')
 @push('style')
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
 
 
 	<!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href="common-css/bootstrap.css" rel="stylesheet">
+	<link href="{{asset('common-css/bootstrap.css')}}" rel="stylesheet">
 
-	<link href="common-css/ionicons.css" rel="stylesheet">
+	<link href="{{asset('common-css/ionicons.css')}}" rel="stylesheet">
 
 
-	<link href="single-post-1/css/styles.css" rel="stylesheet">
+	<link href="{{asset('single-post-1/css/styles.css')}}" rel="stylesheet">
 
-	<link href="single-post-1/css/responsive.css" rel="stylesheet">
+	<link href="{{asset('single-post-1/css/responsive.css')}}" rel="stylesheet">
 @endpush
 @section('content')
 <head>
@@ -42,120 +42,65 @@
 <body >
     <section class="post-area section">
         <div class="container">
-            
+
             <div class="row">
                 
                 <div class="col-lg-8 col-md-12 no-right-padding">
                     
                     <div class="main-post">
-    
+                        {{-- @foreach ($pertanyaan as $item => $value ) --}}
+                            
                         <div class="blog-post-inner">
-    
+                            
                             <div class="post-info">
-    
-                                <div class="left-area">
+                                
+                                {{-- <div class="left-area">
                                     <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
+                                </div> --}}
+                                
+                                <div class="">
+            
+                                    <a class="name" href="#"><b>{{$user->name}}</b></a>
+                                    @php
+                          $date = explode(' ',$pertanyaan->created_at);
+                          $dated = explode('-', $date[0]);
+                             @endphp
+                             <br>
+                                    <h6 class="date">Created On {{$dated[2]}}/{{$dated[1]}}/{{$dated[0]}}</h6>
                                 </div>
-    
-                                <div class="middle-area">
-                                    <a class="name" href="#"><b>Katy Liu</b></a>
-                                    <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                                </div>
-    
+                                
                             </div><!-- post-info -->
-    
-                            <h3 class="title"><a href="#"><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex Concepts in Physics?</b></a></h3>
-    
-                            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    
-                            <div class="post-image"><img src="images/blog-1-1000x600.jpg" alt="Blog Image"></div>
-    
-                            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-    
-                            <ul class="tags">
-                                <li><a href="#">Mnual</a></li>
-                                <li><a href="#">Liberty</a></li>
-                                <li><a href="#">Recommendation</a></li>
-                                <li><a href="#">Inspiration</a></li>
-                            </ul>
-                        </div><!-- blog-post-inner -->
-    
-                        <div class="post-icons-area">
-                            <ul class="post-icons">
-                                <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
-                                <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
-                                {{-- <li><a href="#"><i class="ion-chatbubble"></i>6</a></li> --}}
-                                {{-- <li><a href="#"><i class="ion-eye"></i>138</a></li> --}}
-                            </ul>
-    
-                            {{-- <ul class="icons">
-                                <li>SHARE : </li>
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-pinterest"></i></a></li>
-                            </ul> --}}
+                            
+                            <h3 class="title"><a href="#"><b>{{$pertanyaan->judul}}</b></a></h3>
+                            
+                            <p class="para">{{$pertanyaan->isi}}</p>                    
+                                    <ul class="tags">
+                                    <li><a>{{$tag->tag_name}}</a></li>
+                                    </ul>
+                                </div><!-- blog-post-inner -->
+                                
+                                <div class="post-icons-area">
+                                    <ul class="post-icons">
+                                        <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
+                                        <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
+                                    </ul>
+
                         </div>
-    
-                        {{-- <div class="post-footer post-info">
-    
-                            <div class="left-area">
-                                <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-                            </div>
-    
-                            <div class="middle-area">
-                                <a class="name" href="#"><b>Katy Liu</b></a>
-                                <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                            </div>
-    
-                        </div><!-- post-info --> --}}
-    
     
                     </div><!-- main-post -->
                 </div><!-- col-lg-8 col-md-12 -->
-    
                 <div class="col-lg-4 col-md-12 no-left-padding">
-    
+                    
                     <div class="single-post info-area">
-    
-                        <div class="sidebar-area about-area">
-                            <h4 class="title"><b>ABOUT BONA</b></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                Ut enim ad minim veniam</p>
-                        </div>
-    
-                        <div class="sidebar-area subscribe-area">
-    
-                            <h4 class="title"><b>SUBSCRIBE</b></h4>
-                            <div class="input-area">
-                                <form>
-                                    <input class="email-input" type="text" placeholder="Enter your email">
-                                    <button class="submit-btn" type="submit"><i class="icon ion-ios-email-outline"></i></button>
-                                </form>
-                            </div>
-    
-                        </div><!-- subscribe-area -->
+                        
     
                         <div class="tag-area">
     
                             <h4 class="title"><b>TAG CLOUD</b></h4>
                             <ul>
-                                <li><a href="#">Manual</a></li>
-                                <li><a href="#">Liberty</a></li>
-                                <li><a href="#">Recomendation</a></li>
-                                <li><a href="#">Interpritation</a></li>
-                                <li><a href="#">Manual</a></li>
-                                <li><a href="#">Liberty</a></li>
-                                <li><a href="#">Recomendation</a></li>
-                                <li><a href="#">Interpritation</a></li>
+                                @foreach ($tag_all as $item)
+                            <li><a href="#">{{$item->tag_name}}</a></li>
+                                @endforeach
                             </ul>
     
                         </div><!-- subscribe-area -->
@@ -251,132 +196,72 @@
     
     <section class="comment-section">
         <div class="container">
-            <h4><b>POST COMMENT</b></h4>
+            <h4><b>Add Your Answer</b></h4>
             <div class="row">
     
                 <div class="col-lg-8 col-md-12">
                     <div class="comment-form">
-                        <form method="post">
+                    <form method="post" action="/jawaban">
+                        @csrf
                             <div class="row">
-    
-                                <div class="col-sm-6">
-                                    <input type="text" aria-required="true" name="contact-form-name" class="form-control"
-                                        placeholder="Enter your name" aria-invalid="true" required >
-                                </div><!-- col-sm-6 -->
-                                <div class="col-sm-6">
-                                    <input type="email" aria-required="true" name="contact-form-email" class="form-control"
-                                        placeholder="Enter your email" aria-invalid="true" required>
-                                </div><!-- col-sm-6 -->
-    
                                 <div class="col-sm-12">
-                                    <textarea name="contact-form-message" rows="2" class="text-area-messge form-control"
-                                        placeholder="Enter your comment" aria-required="true" aria-invalid="false"></textarea >
+                                    <textarea name="isi" rows="2" class="text-area-messge form-control"
+                                        placeholder="Enter your Answer" maxlength="255"></textarea >
+                                <input name="question_id" id="question_id" value="{{$pertanyaan->id}}" hidden>
                                 </div><!-- col-sm-12 -->
                                 <div class="col-sm-12">
-                                    <button class="submit-btn" type="submit" id="form-submit"><b>POST COMMENT</b></button>
+                                    <button class="submit-btn" type="submit" id="form-submit"><b>Post Answer</b></button>
                                 </div><!-- col-sm-12 -->
     
                             </div><!-- row -->
                         </form>
                     </div><!-- comment-form -->
     
-                    <h4><b>COMMENTS(12)</b></h4>
+                    <h4><b>Answer</b></h4>
     
-                    <div class="commnets-area">
-    
-                        <div class="comment">
-    
-                            <div class="post-info">
-    
-                                <div class="left-area">
-                                    <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-                                </div>
-    
-                                <div class="middle-area">
+                        @if (is_array($jawaban) || is_object($jawaban))
+                        
+                    
+                        
+                        @foreach ($jawaban as $data)
+                        
+                        <div class="commnets-area ">
+                            
+                            <div class="comment">
+                                
+                                
+                                <div class="post-info">
                                     <a class="name" href="#"><b>Katy Liu</b></a>
                                     <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                                </div>
-    
-    
-                            </div><!-- post-info -->
-    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                Ut enim ad minim veniam</p>
-
-                        </div>
-                        <div class="post-icons-area">
-                            <ul class="post-icons">
-                                <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
-                                <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
-                            </ul>
-    
-                        </div>
-                        {{-- <div class="comment">
-                            <h5 class="reply-for">Reply for <a href="#"><b>Katy Lui</b></a></h5>
-    
-                            <div class="post-info">
-    
-                                <div class="left-area">
-                                    <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-                                </div>
-    
-                                <div class="middle-area">
-                                    <a class="name" href="#"><b>Katy Liu</b></a>
-                                    <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                                </div>
-    
-                                <div class="right-area">
-                                    <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-                                </div>
-    
-                            </div><!-- post-info -->
-    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                Ut enim ad minim veniam</p>
-    
-                        </div> --}}
-    
-                    </div><!-- commnets-area -->
-    
-                    <div class="commnets-area ">
-    
-                        <div class="comment">
-    
-                            <div class="post-info">
-    
-                                <div class="left-area">
-                                    <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-                                </div>
-    
-                                <div class="middle-area">
-                                    <a class="name" href="#"><b>Katy Liu</b></a>
-                                    <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                                </div>
-    
-                                <div class="right-area">
-                                    <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-                                </div>
-    
-                            </div><!-- post-info -->
-    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                                Ut enim ad minim veniam</p>
-    
-                        </div>
-    
-                    </div><!-- commnets-area -->
-    
-                    <a class="more-comment-btn" href="#"><b>VIEW MORE COMMENTS</a>
-    
-                </div><!-- col-lg-8 col-md-12 -->
-    
-            </div><!-- row -->
-    
-        </div><!-- container -->
-    </section>
+                                    
+                                </div><!-- post-info -->
+                                
+                                
+                                <p>{{$data->isi}}</p>
+                                
+                            </div>
+                            
+                            <div class="post-icons-area">
+                                <ul class="post-icons">
+                                    <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
+                                    <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div><!-- commnets-area -->
+                        @endforeach
+                        @endif    
+                                        
+                                        
+                        
+                        {{-- <a class="more-comment-btn" href="#"><b>VIEW MORE COMMENTS</a> --}}
+                            
+                        </div><!-- col-lg-8 col-md-12 -->
+                        
+                    </div><!-- row -->
+                    
+                </div><!-- container -->
+            </section>
 </body>
     @endsection
     @push('scripts')

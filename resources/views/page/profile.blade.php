@@ -1,5 +1,5 @@
 @extends('template.master')
-@push('css')
+@push('style')
 <link href="{{asset('css/profile.css')}}">
 @endpush
 @section('content')
