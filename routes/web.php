@@ -21,6 +21,9 @@ Route::get('/post', function () {
 Route::get('/profile', function () {
     return view('page.profile');
 });
+Route::get('/login-page', function () {
+    return view('page.login');
+});
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
