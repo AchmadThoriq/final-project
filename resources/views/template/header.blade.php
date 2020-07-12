@@ -6,7 +6,7 @@
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
         <ul class="main-menu visible-on-click" id="main-menu">
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/login">Log In</a></li>
             <li><a href="/register">Sign Up</a></li>
         </ul><!-- main-menu -->

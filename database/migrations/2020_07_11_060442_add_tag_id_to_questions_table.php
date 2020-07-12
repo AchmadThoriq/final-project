@@ -27,8 +27,8 @@ class AddTagIdToQuestionsTable extends Migration
     public function down()
     {
         Schema::table('questions', function (Blueprint $table) {
-            $table->unsignedBigInteger('tag_id')->nullable();
-            $table->foreign('tag_id')->references('id')->on('tags');
+            $table->dropForeign(['tag_id']);
+            $table->dropColumn(['tag_id']);
         });
     }
 }

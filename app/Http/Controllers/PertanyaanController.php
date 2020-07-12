@@ -9,6 +9,7 @@ use App\Question;
 use App\Tag;
 use App\User;
 use App\Answer;
+use App\Answer_Comment;
 
 class PertanyaanController extends Controller
 {
@@ -56,7 +57,9 @@ class PertanyaanController extends Controller
         // $jawaban = Answer::wherequestion_id($pertanyaan->question_id);
         $jawaban = Answer::where('question_id', $pertanyaan->id)->get();
         $user_all = User::all();
-        // dd($jawaban);
-        return view('page.post', compact('pertanyaan', 'user', 'tag', 'tag_all', 'jawaban', 'user_all'));
+        $ans_comment = Answer_Comment::all();
+        foreach ($ans_comment as $comment_ans => $val)
+            // dd($val->users_id);
+            return view('page.post', compact('pertanyaan', 'user', 'tag', 'tag_all', 'jawaban', 'user_all', 'ans_comment'));
     }
 }

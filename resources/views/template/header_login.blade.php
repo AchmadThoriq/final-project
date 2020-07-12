@@ -16,9 +16,8 @@
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
 
         <ul class="main-menu visible-on-click" id="main-menu">
-            <li><a href="#">Home</a></li>
+            <li><a href="/pertanyaan">Home</a></li>
             <li><a href="/pertanyaan/create">Create Question</a></li>
-            <li><a href="/profile" style="background-color: aqua">My Profile</a></li>
             <li>
                     <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> -->
                         <a class="dropdown-item"  style="background-color: red" href="{{ route('logout') }}"

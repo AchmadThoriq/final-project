@@ -224,8 +224,48 @@
                                 
                                 
                                 <div class="post-info">
-                                        
-                                <a class="name" href="#"><b>{{$usr->name}}</b></a>
+                                    
+                                    <a class="name" href="#"><b>{{$usr->name}}</b></a>
+                                    <div class="right-area">
+                                        {{-- <h5 class="reply-btn" ><a href="#" data-toggle="modal" data-item="{{$data->id}}"  data-target="#exampleModal"><b>REPLY</b></a></h5> --}}
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-id="{{ $data->id }}" data-target="#exampleModal" >REPLY</button>
+                                    </div>
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">New Comment</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="/comment/answer/create" method="POST">
+                                                    @csrf
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" id="comment" name="comment"
+                                                        required></textarea>
+                                                    </div>
+                                                    <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                    {{-- <button type="button" class="btn btn-primary">Submit Comment</button> --}}
+                                                    {{-- <input type="text" name="answer_id" id="answer_id"
+                                                    value="" hidden> --}}
+                                                    <input type="text" name="answer_id" id="answer_id"
+                                                    hidden>
+                                                    {{-- <h1>{{$data->id}}</h1> --}}
+                                                    <input type="text" name="question_id" id="question_id"
+                                                    value="{{$pertanyaan->id}}" hidden>
+                                                    <button class="submit-btn" type="submit" id="form-submit">Submit
+                                                        Comment</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            {{-- <p>{{$data->id}}</p> --}}
+                                        </div>
+                                    </div>
                                 @php
                                 $date = explode(' ',$data->created_at);
                                 $dated = explode('-', $date[0]);
@@ -244,8 +284,31 @@
                                                 <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
                                                 <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
                                                 </ul>
-                                            </div>
-                                            
+                                        </div>
+                                        <hr>
+                                        @if (is_array($ans_comment) || is_object($ans_comment))
+                    @foreach ($ans_comment as $comment_ans => $val)
+                    @if ($val->answer_id == $data->id)
+                    <div class="comment">
+                        <h5 class="reply-for">Reply for <a href="#"><b>{{$usr->name}}</b></a></h5>
+                        @php
+                        $dateanskom = explode(' ',$val->created_at);
+                        $datedanskom = explode('-', $dateanskom[0]);
+                        @endphp
+                        @foreach ($user_all as $usre)
+                        @if ($usre->id == $val->users_id)
+                        <div class="post-info">
+                            <a class="name" href="#"><b>{{$usre->name}}</b></a>
+                            <h6 class="date">{{$datedanskom[2]}}/{{$datedanskom[1]}}/{{$datedanskom[0]}}</h6>
+                        </div><!-- post-info -->
+                        @endif
+                        @endforeach
+                        <p>{{$val->isi}}</p>
+
+                    </div>
+                    @endif
+                    @endforeach
+                    @endif
                                         </div><!-- commnets-area -->
                                         @endif
                                         @endforeach
@@ -271,4 +334,13 @@
 	<script src="common-js/bootstrap.js"></script>
 
     <script src="common-js/scripts.js"></script>
+  
+      <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var id = button.data('id') // Extract info from data-* attributes
+  var modal = $(this)
+  modal.find('.modal-body input[name="answer_id"]').val(id);
+})
+        </script>
     @endpush
