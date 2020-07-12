@@ -25,17 +25,11 @@
 	<!-- Font -->
 
 	{{-- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-
-
 	<!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="common-css/bootstrap.css" rel="stylesheet">
-
 	<link href="common-css/ionicons.css" rel="stylesheet">
-
-
 	<link href="single-post-1/css/styles.css" rel="stylesheet">
-
 	<link href="single-post-1/css/responsive.css" rel="stylesheet"> --}}
 
 </head>
@@ -206,8 +200,8 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <textarea name="isi" rows="2" class="text-area-messge form-control"
-                                        placeholder="Enter your Answer" maxlength="255"></textarea >
-                                <input name="question_id" id="question_id" value="{{$pertanyaan->id}}" hidden>
+                                        placeholder="Enter your Answer" maxlength="255" required></textarea >
+                                <input name="question_id" id="question_id" value="{{$pertanyaan->id}}" hidden >
                                 </div><!-- col-sm-12 -->
                                 <div class="col-sm-12">
                                     <button class="submit-btn" type="submit" id="form-submit"><b>Post Answer</b></button>
@@ -221,18 +215,15 @@
     
                         @if (is_array($jawaban) || is_object($jawaban))
                         
-                    
-                        
                         @foreach ($jawaban as $data)
-                        
+                        @foreach ($user_all as $usr)
+                        @if ($usr->id == $data->users_id)
                         <div class="commnets-area ">
-
+                            
                             <div class="comment">
                                 
-                                @foreach ($user_all as $usr)
-                                    
+                                
                                 <div class="post-info">
-                                    @if ($usr->id == $data->users_id)
                                         
                                 <a class="name" href="#"><b>{{$usr->name}}</b></a>
                                 @php
@@ -253,14 +244,13 @@
                                                 <li><a href="#"><i class="fa fa-thumbs-up"></i>57</a></li>
                                                 <li><a href="#"><i class="fa fa-thumbs-down"></i>138</a></li>
                                                 </ul>
-                                                </div>
-                                                
-                                                </div><!-- commnets-area -->
-                                                @endif
-                                                @endforeach
-                        @endforeach
-                        @endif    
-                                        
+                                            </div>
+                                            
+                                        </div><!-- commnets-area -->
+                                        @endif
+                                        @endforeach
+                                                @endforeach  
+                                                @endif    
                                         
                         
                         {{-- <a class="more-comment-btn" href="#"><b>VIEW MORE COMMENTS</a> --}}

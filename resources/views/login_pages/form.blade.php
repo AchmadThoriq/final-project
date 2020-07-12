@@ -25,7 +25,7 @@
                 <div class="col-sm-12">
                   <label >Judul</label>
                   <input type="text" aria-required="true" name="judul" class="form-control"
-                    aria-invalid="true" maxlength = "60" required >
+                    aria-invalid="true" maxlength = "28" required >
                 </div>
 
                 <div class="col-sm-12">

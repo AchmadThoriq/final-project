@@ -19,6 +19,13 @@ class PertanyaanController extends Controller
         // dd($user);
         return view('login_pages.index', compact('pertanyaan', 'user'));
     }
+    public function outindex()
+    {
+        $pertanyaan = Question::all();
+        $user = User::all();
+        // dd($user);
+        return view('page.outindex', compact('pertanyaan', 'user'));
+    }
     public function create()
     {
 
@@ -49,6 +56,7 @@ class PertanyaanController extends Controller
         // $jawaban = Answer::wherequestion_id($pertanyaan->question_id);
         $jawaban = Answer::where('question_id', $pertanyaan->id)->get();
         $user_all = User::all();
+        // dd($jawaban);
         return view('page.post', compact('pertanyaan', 'user', 'tag', 'tag_all', 'jawaban', 'user_all'));
     }
 }

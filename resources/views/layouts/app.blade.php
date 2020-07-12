@@ -25,7 +25,7 @@
     @stack('scripts-head')
 </head>
 <body>
-    @include('layouts.header')
+    @include('template.header')
     <div id="app">
         <main class="py-4">
             @yield('content')

@@ -1,4 +1,4 @@
-@extends('template.master_login')
+@extends('template.master')
 
 @section('content')
 <section class="blog-area section">
